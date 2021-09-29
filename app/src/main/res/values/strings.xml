@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">TodayRecode</string>
+    <string name="splash">SPLASH</string>
+    <string name="home">홈</string>
+    <string name="today">오늘</string>
+    <string name="history">기록</string>
+    <string name="schedule">일정</string>
+    <string name="today_empty">오늘의 기록이 업습니다.</string>
+</resources>
