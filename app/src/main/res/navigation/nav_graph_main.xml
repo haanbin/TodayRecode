@@ -15,7 +15,11 @@
         android:id="@+id/todayFragment"
         android:name="com.haanbin.todayrecode.ui.main.today.TodayFragment"
         android:label="TodayFragment"
-        tools:layout="@layout/fragment_today" />
+        tools:layout="@layout/fragment_today">
+        <action
+            android:id="@+id/action_todayFragment_to_deleteRecodeDialogFragment"
+            app:destination="@id/deleteRecodeDialogFragment" />
+    </fragment>
 
     <fragment
         android:id="@+id/historyFragment"
@@ -28,4 +32,12 @@
         android:name="com.haanbin.todayrecode.ui.main.schedule.ScheduleFragment"
         android:label="ScheduleFragment"
         tools:layout="@layout/fragment_schedule" />
+
+    <dialog
+        android:id="@+id/deleteRecodeDialogFragment"
+        android:name="com.haanbin.todayrecode.ui.main.today.DeleteRecodeDialogFragment"
+        android:label="DeleteRecodeDialogFragment"
+        tools:layout="@layout/dialog_delete_recode" />
+
+
 </navigation>

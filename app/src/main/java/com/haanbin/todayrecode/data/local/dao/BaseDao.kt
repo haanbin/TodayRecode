@@ -8,10 +8,7 @@ import androidx.room.Update
 interface BaseDao<T> {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    fun insert(entity: T)
-
-    @Update
-    fun update(entity: T)
+    fun insertOrUpdate(entity: T)
 
     @Delete
     fun delete(entity: T)

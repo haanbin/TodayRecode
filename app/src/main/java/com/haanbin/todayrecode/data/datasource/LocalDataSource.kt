@@ -13,9 +13,7 @@ interface LocalDataSource {
 
     suspend fun getTodayRecode(): Flow<Recode>
 
-    suspend fun insertRecode(recode: Recode)
-
-    suspend fun updateRecode(recode: Recode)
+    suspend fun insertOrUpdateRecode(recode: Recode)
 
     suspend fun deleteRecode(recode: Recode)
 }

@@ -19,9 +19,8 @@ class RepositoryImpl @Inject constructor(private val localDataSource: LocalDataS
 
     override suspend fun getTodayRecode(): Flow<Recode?> = localDataSource.getTodayRecode()
 
-    override suspend fun insertRecode(recode: Recode) = localDataSource.insertRecode(recode)
-
-    override suspend fun updateRecode(recode: Recode) = localDataSource.updateRecode(recode)
+    override suspend fun insertOrUpdateRecode(recode: Recode) =
+        localDataSource.insertOrUpdateRecode(recode)
 
     override suspend fun deleteRecode(recode: Recode) = localDataSource.deleteRecode(recode)
 }

@@ -28,7 +28,7 @@ class LocalDataSourceTest {
         val recode = Recode(CONTENT, Date())
         localDataSource.insertRecode(recode)
         coVerify {
-            recodeDao.insert(recode)
+            recodeDao.insertOrUpdate(recode)
         }
     }
 

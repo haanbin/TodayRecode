@@ -8,7 +8,7 @@ import java.util.*
 
 @Entity(tableName = "recode")
 data class Recode(
-    val content: String,
+    var content: String,
     val inputDate: Date
 ) {
     @PrimaryKey(autoGenerate = true)

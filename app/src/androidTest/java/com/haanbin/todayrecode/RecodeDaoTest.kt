@@ -21,7 +21,7 @@ class RecodeDaoTest : DatabaseTest() {
 
     @Test
     fun writeUserAndRead() = runBlocking {
-        recodeDao.insert(Recode(CONTENT, Date()))
+        recodeDao.insertOrUpdate(Recode(CONTENT, Date()))
         recodeDao.selectRecentRecode().collect {
             Assert.assertEquals(it.content, CONTENT)
         }

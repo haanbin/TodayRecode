@@ -21,5 +21,6 @@
         android:id="@+id/mainFragment"
         android:name="com.haanbin.todayrecode.ui.main.MainFragment"
         android:label="MainFragment"
-        tools:layout="@layout/fragment_main" />
+        tools:layout="@layout/fragment_main" >
+    </fragment>
 </navigation>
