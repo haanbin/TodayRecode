@@ -2,8 +2,6 @@
 
 ## Stack
 
----
-
 - AAC ViewModel
 - LiveData
 - DataBinding
