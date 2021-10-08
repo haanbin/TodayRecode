@@ -14,4 +14,13 @@
     <string name="delete_message">정말로 삭제하시겠습니까?</string>
     <string name="confirm">확인</string>
     <string name="history_empty">기록이 없습니다.</string>
+    <string name="home_title">오늘의 기록</string>
+    <string name="show_recent_recode">최근기록 보기</string>
+    <string name="recode_go">작성하러 가기</string>
+    <string name="recent_recode_empty">최근 작성 기록이 없습니다.</string>
+    <string name="time_schedule">타임 스캐줄</string>
+    <string name="schedule_empty">등록된 스캐줄이 없습니다.</string>
+    <string name="schedule_go">등록하러 가기</string>
+    <string name="coming_soon">준비중입니다.</string>
+    <string name="home_today_recode_empty">아직 오늘 기록을 작성하지 않으셨어요!</string>
 </resources>

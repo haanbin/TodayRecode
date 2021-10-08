@@ -22,4 +22,6 @@ class LocalDataSourceImpl @Inject constructor(private val recodeDao: RecodeDao) 
     override suspend fun insertOrUpdateRecode(recode: Recode) = recodeDao.insertOrUpdate(recode)
 
     override suspend fun deleteRecode(recode: Recode) = recodeDao.delete(recode)
+
+    override suspend fun getFirstRecode(): Flow<Recode> = recodeDao.selectFirstRecode()
 }

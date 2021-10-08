@@ -18,4 +18,6 @@ interface LocalDataSource {
     suspend fun insertOrUpdateRecode(recode: Recode)
 
     suspend fun deleteRecode(recode: Recode)
+
+    suspend fun getFirstRecode(): Flow<Recode>
 }

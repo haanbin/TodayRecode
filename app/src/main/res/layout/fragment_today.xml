@@ -19,7 +19,8 @@
         <TextView
             android:id="@+id/tv_today_date"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="@dimen/title_height"
+            android:gravity="center_vertical"
             android:paddingHorizontal="@dimen/horizontal_space"
             android:paddingVertical="10dp"
             android:text="@{vm.todayDate}"

@@ -19,9 +19,9 @@
         <TextView
             android:id="@+id/tv_history_title"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="@dimen/title_height"
+            android:gravity="center_vertical"
             android:paddingHorizontal="@dimen/horizontal_space"
-            android:paddingVertical="10dp"
             android:text="@string/history"
             android:textSize="@dimen/title_text"
             app:layout_constraintEnd_toEndOf="parent"
