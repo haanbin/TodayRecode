@@ -16,8 +16,9 @@
         <item name="android:includeFontPadding">false</item>
     </style>
 
-    <style name="fullDialog">
-        <item name="android:windowFullscreen">true</item>
+    <style name="Theme_Dialog">
+        <item name="android:windowMinWidthMajor">100%</item>
+        <item name="android:windowMinWidthMinor">100%</item>
         <item name="android:windowIsFloating">true</item>
     </style>
 </resources>

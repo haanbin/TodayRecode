@@ -6,7 +6,9 @@ import androidx.fragment.app.viewModels
 import com.haanbin.todayrecode.R
 import com.haanbin.todayrecode.base.BaseDialogFragment
 import com.haanbin.todayrecode.databinding.DialogDeleteRecodeBinding
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class DeleteRecodeDialogFragment :
     BaseDialogFragment<DialogDeleteRecodeBinding>(R.layout.dialog_delete_recode) {
 

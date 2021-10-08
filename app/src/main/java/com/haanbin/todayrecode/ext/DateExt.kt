@@ -14,6 +14,12 @@ fun Date.toCurrentDate(): Date {
     return sdf.parse(currentDateString) ?: Date()
 }
 
+fun Date.removeTime(): Date {
+    val sdf = SimpleDateFormat("yyyy/MM/dd", Locale.KOREA)
+    val currentDateString = sdf.format(this)
+    return sdf.parse(currentDateString) ?: Date()
+}
+
 fun Calendar.toTomorrowDate(): Date {
     val calendar = this
     calendar.add(Calendar.DATE, 1)

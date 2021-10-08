@@ -22,6 +22,6 @@ interface RecodeDao : BaseDao<Recode> {
     @Query("SELECT * FROM recode ORDER BY inputDate DESC LIMIT 1")
     fun selectRecentRecode(): Flow<Recode>
 
-    @Query("SELECT * FROM recode ORDER BY CASE WHEN :isAsc = 1 THEN inputDate END ASC, CASE WHEN :isAsc = 0 THEN inputDate END DESC LIMIT :size OFFSET :start")
-    fun selectRecodes(isAsc: Boolean, start: Int, size: Int): Flow<List<Recode>>
+    @Query("SELECT * FROM recode WHERE inputDate <= :start ORDER BY CASE WHEN :isAsc = 1 THEN inputDate END ASC, CASE WHEN :isAsc = 0 THEN inputDate END DESC")
+    fun selectRecodes(isAsc: Boolean, start: Date = Date().toCurrentDate()): Flow<List<Recode>>
 }

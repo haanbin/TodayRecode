@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+
+        <import type="android.view.View" />
 
         <variable
             name="vm"
@@ -14,12 +17,54 @@
         android:layout_height="match_parent">
 
         <TextView
-            android:layout_width="wrap_content"
+            android:id="@+id/tv_history_title"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:paddingHorizontal="@dimen/horizontal_space"
+            android:paddingVertical="10dp"
             android:text="@string/history"
-            app:layout_constraintBottom_toBottomOf="parent"
+            android:textSize="@dimen/title_text"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:onClick="@{() -> vm.calendarClick()}"
+            android:paddingHorizontal="@dimen/horizontal_space"
+            android:src="@drawable/ic_calendar"
+            app:layout_constraintBottom_toBottomOf="@id/tv_history_title"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/tv_history_title" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_history"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:clipToPadding="true"
+            android:orientation="vertical"
+            android:paddingTop="10dp"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_history_title"
+            tools:itemCount="3"
+            tools:listitem="@layout/item_history" />
+
+        <TextView
+            android:id="@+id/tv_empty"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:gravity="center"
+            android:text="@string/history_empty"
+            android:textSize="20sp"
+            android:visibility="@{vm.emptyVisible ? View.VISIBLE : View.GONE}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_history_title"
+            tools:visibility="gone" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

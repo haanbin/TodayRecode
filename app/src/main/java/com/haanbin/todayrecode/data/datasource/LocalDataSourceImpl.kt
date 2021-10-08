@@ -3,6 +3,7 @@ package com.haanbin.todayrecode.data.datasource
 import com.haanbin.todayrecode.data.local.entity.Recode
 import com.haanbin.todayrecode.data.local.dao.RecodeDao
 import kotlinx.coroutines.flow.Flow
+import java.util.*
 import javax.inject.Inject
 import javax.inject.Singleton
 
@@ -13,8 +14,8 @@ class LocalDataSourceImpl @Inject constructor(private val recodeDao: RecodeDao) 
 
     override suspend fun getRecentRecode(): Flow<Recode> = recodeDao.selectRecentRecode()
 
-    override suspend fun getRecodes(isAsc: Boolean, start: Int, size: Int): Flow<List<Recode>> =
-        recodeDao.selectRecodes(isAsc, start, size)
+    override suspend fun getRecodes(isAsc: Boolean, start: Date): Flow<List<Recode>> =
+        recodeDao.selectRecodes(isAsc, start)
 
     override suspend fun getTodayRecode(): Flow<Recode> = recodeDao.selectTodayRecode()
 

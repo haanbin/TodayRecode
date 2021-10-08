@@ -20,6 +20,17 @@ fun Recode.toRecodeItem(): RecodeItem {
         id,
         content,
         inputDate,
-        inputDate.toShowString()
+        displayDate = inputDate.toShowString()
     )
+}
+
+fun List<Recode>.toRecodeItems(): List<RecodeItem> {
+    return map {
+        RecodeItem(
+            it.id,
+            it.content,
+            it.inputDate,
+            displayDate = it.inputDate.toShowString()
+        )
+    }
 }
