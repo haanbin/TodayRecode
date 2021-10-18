@@ -13,6 +13,7 @@ import com.haanbin.todayrecode.ext.toCurrentDate
 import com.haanbin.todayrecode.util.Event
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.launch
@@ -55,7 +56,7 @@ class HomeViewModel @Inject constructor(
                         "오늘을 기록한지 $calDateDays 일째!"
                     }
                 } ?: kotlin.run {
-                    todayText = "늘"
+                    todayText = "오늘부터 기록 시작!"
                 }
                 withContext(Dispatchers.Main) {
                     _todayDate.value = todayText
@@ -64,10 +65,12 @@ class HomeViewModel @Inject constructor(
         }
         viewModelScope.launch(Dispatchers.IO) {
             getRecentRecodeUserCase().map {
-                it.toRecodeItem()
-            }.collect {
+                it?.toRecodeItem()
+            }.collect { recodeItem ->
                 withContext(Dispatchers.Main) {
-                    _recentRecode.value = it
+                    recodeItem?.let {
+                        _recentRecode.value = it
+                    }
                 }
             }
         }

@@ -1,6 +1,7 @@
 package com.haanbin.todayrecode.ui.main.home
 
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
@@ -8,6 +9,7 @@ import com.haanbin.todayrecode.R
 import com.haanbin.todayrecode.base.BaseFragment
 import com.haanbin.todayrecode.databinding.FragmentHomeBinding
 import dagger.hilt.android.AndroidEntryPoint
+import timber.log.Timber
 
 @AndroidEntryPoint
 class HomeFragment : BaseFragment<FragmentHomeBinding, HomeViewModel>(R.layout.fragment_home) {

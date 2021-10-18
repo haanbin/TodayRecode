@@ -26,7 +26,7 @@ class LocalDataSourceTest {
     @DisplayName("기록 입력")
     fun `기록 입력`() = runBlocking {
         val recode = Recode(CONTENT, Date())
-        localDataSource.insertRecode(recode)
+        localDataSource.insertOrUpdateRecode(recode)
         coVerify {
             recodeDao.insertOrUpdate(recode)
         }

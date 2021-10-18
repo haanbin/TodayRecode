@@ -13,7 +13,7 @@ class RepositoryImpl @Inject constructor(private val localDataSource: LocalDataS
 
     override suspend fun getRecode(id: Long): Flow<Recode> = localDataSource.getRecode(id)
 
-    override suspend fun getRecentRecode(): Flow<Recode> = localDataSource.getRecentRecode()
+    override suspend fun getRecentRecode(): Flow<Recode?> = localDataSource.getRecentRecode()
 
     override suspend fun getRecodes(isAsc: Boolean, start: Date): Flow<List<Recode>> =
         localDataSource.getRecodes(isAsc, start)

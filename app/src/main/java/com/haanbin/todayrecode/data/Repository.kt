@@ -9,7 +9,7 @@ interface Repository {
 
     suspend fun getRecode(id: Long): Flow<Recode>
 
-    suspend fun getRecentRecode(): Flow<Recode>
+    suspend fun getRecentRecode(): Flow<Recode?>
 
     suspend fun getRecodes(isAsc: Boolean, start: Date = Date().toCurrentDate()): Flow<List<Recode>>
 
